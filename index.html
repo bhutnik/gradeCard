@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-card">
+
+        <!-- Step 1: Enter Subject Count -->
+         
+        <div id="step-1" class="step">
+            <h2>Grade Calculator</h2>
+            <p class="subtitle">Step 1: How many subjects do you have?</p>
+            <div class="input-group">
+                <label for="num-subjects">Number of Subjects:</label>
+                <input type="number" id="num-subjects" min="1" max="15" placeholder="e.g. 5"/>
+            </div>
+            <button class="btn" onclick="generateSubjectInputs()">Next: Enter Subject Details</button>
+        </div>
+
+        <!-- Step 2: Enter Details for Each Subject -->
+
+        <div id="step-2" class="step hidden">
+            <h2>Subject Details</h2>
+            <p class="subtitle">Step 2: Enter subject names and marks</p>
+
+            <div id="subject-fields-container">
+
+            </div>
+
+            <div class="btn-group">
+                <button class="btn secondary" onclick="goBackToStep1()">Back</button>
+                <button class="btn" onclick="calculateFinalGrades()">Calculate Overall Grade</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Result Page -->
+
+        <div id="step-3" class="step hidden">
+            <h2>Grade Report</h2>
+
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>%</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="report-body">
+
+                </tbody>
+            </table>
+
+            <div class="summary-box">
+                <p><strong>Total Marks:</strong><span id="summary-total">-</span></p>
+                <p><strong>Overall Percentage:</strong><span id="summary-percentage">-</span></p>
+                <p><strong>Overall Grade:</strong><span id="summary-grade" class="highlight-grade">-</span></p>
+                <p><strong>Final Status:</strong><span id="summary-status">-</span></p>
+            </div>
+
+            <button class="btn secondary" onclick="resetCalculator()">Start New Calculation</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
