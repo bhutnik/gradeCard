@@ -64,7 +64,7 @@ function calculateFinalGrades(){
 
         //Validation
         if (isNaN(obtained) || isNaN(max) || max <= 0 || obtained <0 || obtained > max){
-            alert(`please enter valid marks for"${subName}". Obtained marks cannot be higher than maximum marks.`);
+            alert(`please enter valid marks for"${subName}". Obtained marks cannot be higher than maximum marks or lower than 0.`);
             return;
         }
 
